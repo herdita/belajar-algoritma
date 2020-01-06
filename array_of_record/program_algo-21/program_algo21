@@ -1,0 +1,82 @@
+procedure isi_data(output n:integer, output nim,nama:larik1, output nilai:larik2)
+{i.s: user memasukan banyaknya santri (n) dan memasukan nim,nama,nilai}
+{f.s: mencetak nim,nama,nilai}
+
+kamus
+i:integer
+
+algoritma
+    input(n)
+    while(n<1) or (n>max)do
+        output('maaf yang anda masukan harus 1 - 100')
+        input(n)
+    endwhile
+    for i <- 1 to n do
+        input(nim(i),nama(i),nilai(i))
+        while(nilai<0)or(nilai>100)do
+            output('maaf nilai yang harus di masukan harus 1-100')
+            input(nilai(i))
+        endwhile
+    endfor
+endprocedure
+
+
+function idx(input nilai:integer)->char
+{i.s: user sudah mendefinisikan input nilai}
+{f.s: mencetak indek nilai}
+
+kamus
+
+algoritam
+    depend(nilai)on
+        80..100: idx <-'A'
+        70..79 : idx <-'B'
+        60..69 : idx <-'C'
+        50..59 : idx <-'D'
+        0..49  : idx <-'E'
+    enddepend
+endfunction
+
+
+procedure tampil_data(input n:integer, input nim,nama:larik1, input nilai:larik2)
+{i.s:}
+{f.s:}
+
+kamus
+function idx(nilai:integer)->char
+i:integer
+
+algoritma
+    output('                DAFTAR SANTRI                ')
+    output('=============================================')
+    output('| NO |  NIM  |     NAMA     | NILAI | INDEKS |')
+    for i <- 1 to n do
+        indeks <- idx(nilai(i))
+        output('|',i,'|',nim(i),'|',nama(i),'|',nilai(i),'|',indeks(i),'|')
+    endfor
+endfunction
+
+{algoritma utama)
+membuat_daftar_santri
+{i.s: user sudah mendefinisikan input nim,nama,nilai}
+{f.s: menampilkan nim,nama,nilai dan indeks nilai}
+
+kamus {global}
+    isi_data(output n:integer, output nim,nama:larik1, output nilai:larik2)
+    tampil_data(input n:integer, input nim,nama:larik1, input nilai:larik2)
+    
+    const 
+      max=100
+    type
+      larik1=array[1..max]of string
+      larik2=array[1..max]of integer
+      larik3=array[1..max]of char
+
+    nim,nama :larik1
+    nilai    :larik2
+    indeks   :larik3
+    n        :integer
+
+algoritma
+    isi_data(n,nim,nama,nilai)
+    tampil_data(n,nim,nama,nilai)

@@ -1,0 +1,20 @@
+array_satu_dimensi
+{i.s:}
+{f.s:}
+
+kamus
+    const 
+        max=20;
+    type
+        larik = array[1..max] of string
+    
+    nama:larik
+
+algoritma
+    input(n)   // banyaknya jumlah nama
+    for i <- 1 to n do
+        input(nama[i])
+    endfor
+    for i <- 1 to n do
+        output(nama[i])
+

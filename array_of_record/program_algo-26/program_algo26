@@ -1,0 +1,21 @@
+array_dua_dimensi
+{i.s:}
+{f.s:}
+
+{kamus}
+    const
+        maks_colom = 4
+        maks_baris = 4
+    type
+        data = array[1..maks_baris,1..maks_colom] of string
+
+    {variabel}
+        nama:data
+        i,j,n:integer
+
+{algoritma}
+    for i <- 1 to maks_baris do
+        for j <- 1 to maks_colom do
+            input(nama(i,j))
+        endfor
+    endfor
