@@ -1,0 +1,16 @@
+bilangan_kelipatan_4
+{i.s: user memasukan bilangan }
+{f.s: menampilkan apakah bilangan kelipatan 4 atau bukan }
+
+kamus
+x:integer
+
+algoritma
+    input(x)
+    if(x mod 4=0)
+     then
+      output('kelipatan 4')
+     else
+      output('bukan kelipatan 4')
+    endif
+    

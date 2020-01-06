@@ -1,0 +1,18 @@
+index_nilai
+{i.s: user memasukan nilai ujian}
+{f.s: menampilkan index nilai ujian}
+
+kamus
+nilai:integer
+index:char
+
+algoritma
+    input(nilai)
+    case nilai
+        80..100 : index <= 'A'
+        70..79  : index <= 'B'
+        60..69  : index <= 'C'
+        50..59  : index <= 'D'
+        otherwise : index <= 'E'
+    endcase
+    output(index)

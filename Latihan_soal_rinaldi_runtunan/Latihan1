@@ -1,0 +1,16 @@
+konversi_detik
+{i.s: user memasukan durasi waktu}
+{f.s: menampilkan konversi dari durasi detik ke hari,jam,menit,detik}
+
+kamus
+    durasi_waktu,hari,sisa,jam,menit,detik:integer
+
+algoritma
+    input(durasi_waktu)
+    hari <= durasi_waktu div 8640
+    sisa <= durasi_waktu mod 8640
+    jam  <= sisa div 3600
+    sisa <= sisa mod 3600
+    menit <= sisa div 60
+    detik <= sisa mod 60
+    output(hari,jam,menit,detik)

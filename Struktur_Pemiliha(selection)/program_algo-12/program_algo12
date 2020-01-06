@@ -1,0 +1,19 @@
+menentukan_nilai_max
+{i.s: user memasukan nilai a,b,c}
+{f.s: menampilkan nilai max dari ke-tiga nilai}
+
+kamus
+a,b,c,max:integer
+
+algoritma
+    input(a,b,c)
+    if(a>b) then
+      max <= a
+    else
+      max <= b
+    endif
+
+    if(c>max)then
+      max <= c
+    endif
+    output(max)

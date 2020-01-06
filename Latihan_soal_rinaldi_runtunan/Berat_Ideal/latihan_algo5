@@ -1,0 +1,18 @@
+menentukan_berat_badan_ideal
+{i.s : user memasukan nilai tinggi badan}
+{f.s : menampilkan berat badan ideal}
+
+kamus
+tinggi_badan,berat_ideal,berat_badan:integer
+
+algoritma
+    input(tinggi_badan)
+    input(berat_badan)
+    berat_ideal <= tinggi_badan - 100
+    berat_ideal <= berat_ideal - (berat_ideal * 0.1)
+    if(berat_badan < berat_ideal -2)and(berat_badan > berat_ideal +2)
+      then 
+        output('Berat badan kamu tidak ideal, idealnya : ',berat_ideal)
+      else
+        output('Berat badan kamu ideal :,berat_ideal)
+    endif

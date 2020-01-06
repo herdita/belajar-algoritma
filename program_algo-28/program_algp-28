@@ -1,0 +1,84 @@
+program_pengurutan
+{i.s:}
+{f.s:}
+
+kamus
+    const
+        maks_mhs: 20
+    type
+        data_mhs=record
+            nama  : string
+            nilai : integer
+        endrecord
+
+        arr_mhs= [1..maks_mhs]of data_mhs
+
+    mahasiswa: arr_mhs
+
+procedure isi_data(output n:integer, output mahasiswa:arr_mhs)
+{i.s: user memasukan banyak mahasiswa, nama, nilai }
+{f.s: }
+
+Kamus
+    i: integer
+
+algoritma
+    input(n) // banyaknya mahasiswa
+    output('------------------------')
+    output('|     Nama     | Nilai |')
+    output('------------------------')
+    for i <- 1 to n do
+        input(mahasiswa[i].nama)
+        input(mahasiswa[i].nilai)
+    endfor
+endprocedure
+
+
+procedure tukar(output mahasiswa:arr_mhs)
+{i.s:}
+{f.s:}
+
+kamus
+    temp : data_mhs
+
+algoritma
+    temp <- mahasiswa[k]
+    mahasiswa[k] <- mahasiswa[k-1]
+    mahasiswa[k-1] <- temp
+endprocedure
+
+
+procedure bubble_sort(input n:integer, output mahasiswa: arr_mhs)
+{i.s:}
+{f.s:}
+
+kamus
+    i,k :integer
+
+algoritam
+    for i<- 1 to n-1
+        for k <- n downto i+1  // accending
+            if(mahasiswa[k].nilai < mahasiswa[k-1].nilai)
+                tukar(mahasiswa:arr_mhs)
+            endif
+        endfor
+    endfor
+
+
+procedure tampil_data(input n:integer, input mahasiswa:arr_mhs)
+{i.s: data banyaknya mahasiswa dan nama, nilai sudah terdefinisi}
+{f.s: menampilkan nilai mahasiswa}
+
+Kamus
+    i:integer
+
+algoritma
+    output('------------------------')
+    output('|     Nama     | Nilai |')
+    output('------------------------')
+    bubble_sort(n,mahasiswa) 
+    for i <- 1 to n do
+        output(mahasiswa[i].nama)
+        output(mahasiswa[i].nilai)
+    endfor
+endprocedure

@@ -1,0 +1,20 @@
+pasar_sewalayan
+{i.s: user memasukan nilai total belanja}
+{f.s: menampilkan diskon harga, harga belanja}
+
+kamus
+total_belanja:integer
+diskon,harga_belanja:real
+
+algoritma
+    input(total_belanja)
+    if(total_belanja>=100000)
+      then
+       input(diskon)
+       diskon <= diskon / 100
+       diskon <= harga_belanja * diskon
+       harga_belanja <= total_belanja - diskon
+      else
+       harga_belanja <= total_belanja
+    endif
+    output(diskon,harga_belanja)

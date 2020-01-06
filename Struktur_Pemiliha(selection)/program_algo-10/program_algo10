@@ -1,0 +1,15 @@
+Bilangan_genap
+{i.s : user memasukan bilangan}
+{f.s : menampilkan bilangan ganjil atau genap}
+
+kamus
+x:integer
+bilangan:string
+
+algoritma
+    input(x)
+    bilangan <= 'ganjil'
+    if (x mod 2 =0) then
+      bilangan <= 'genap'
+    endif
+    output(bilangan)    

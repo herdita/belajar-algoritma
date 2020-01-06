@@ -1,0 +1,14 @@
+konversi_waktu_proyek
+{i.s: user memasukan totalhari waktu penyelesaian proyek}
+{f.s: menampilkan tahun,bulan,hari dari konversi totalhari}
+
+kamus
+    totalhari,tahun,sisa,bulan,hari:integer
+
+algoritma
+    input(totalhari)
+    tahun <= totalhari div 365
+    sisa  <= totalhari mod 365
+    bulan <= sisa div 30
+    hari  <= sisa mod 30
+    output(tahun,bulan,hari)

@@ -1,0 +1,18 @@
+nilai_tukar_pecahan
+{i.s user memasukan nilai_uang yg akan di konversikan}
+{f.s menampilakan jumlah pecahan yang di konversikan dari nilai_uang}
+
+kamus
+nilai_uang,sisi,pecahan_1000,pecahan_500,pecahan_100,pecahan_25:integer
+
+
+algoritma
+    input(nilai_uang)
+    pecahan_1000 <= nilai_uang div 1000
+    sisa <= nilai_uang mod 1000
+    pecahan_500  <= sisa div 500
+    sisa <= sisa mod 500
+    pecahan_100  <= sisa div 100
+    sisa <= sisa mod 1oo
+    pecahan_25   <= sisa div 25
+    output(pecahan_1000,pecahan_500,pecahan_100,pecahan_25)

@@ -1,0 +1,42 @@
+upah_perjam_karyawan
+{i.s: user memasukan nama,gol,jjk karyawan}
+{f.s: menampilkan total upah karyawan }
+
+kamus
+const jamNormal  = 48
+const upahlembur = 3000
+
+nama:string
+gol :char
+jjk,upah_perjam,lembur,total_upah:integer
+
+
+algoritma
+    input(nama,gol,jjk)
+    if(gol='a')
+       then
+         upah_perjam <= 4000
+       else
+         if(gol='b')
+           then
+             upah_perjam <= 5000
+           else
+              if(gol='c')
+                then
+                  upah_perjam <= 6000
+                else
+                  if(gol='d')
+                    upah_perjam <= 7000
+                  endif
+              endif
+         endif
+    endif  
+
+    if(jjk<=jamNormal)
+      then
+        total_upah <= jjk * upah_perjam
+      else
+        lembur <= jjk - jamNormal
+        total_upah <= (jamNormal * upah_perjam) + (lembur * upahlembur)
+    endif
+    output(nama,total_upah)

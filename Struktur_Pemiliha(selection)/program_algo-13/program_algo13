@@ -1,0 +1,17 @@
+upah_karyawan
+{i.s: user memasukan nama dan jumlaj jam kerja}
+{f.s: menampilkan upah karyawan }
+
+kamus
+nama,jjk,upah,lembur:integer
+
+algoritma
+    input(nama,jjk)
+    if(jjk<=48)
+      then
+        upah <= jjk*2000
+      else
+        lembur <= jjk - 48
+        upah   <= (48 * 2000) + (lembur * 3000)
+    endif
+    output(nama,upah)

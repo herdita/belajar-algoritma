@@ -1,0 +1,19 @@
+jarak_kedua_tanggal
+{i.s user memasukan tanggal1,tanggal2}
+{f.s menampilkan selisih tanggal yang di konversikan ke tahun,bulan,tanggal}
+
+kamus
+    tanggal1,tanggal2,bulan1,bulan2,tahun1,tahun2:integer
+    total_tanggal1,total_tanggal2,selisih,tahun,sisa,bulan,tanggal:integer
+
+algoritma
+    input(tangga1,bulan1,tahun1,tanggal2,bulan2,tahun2)
+    total_tanggal1 <= (tahun1*365)+(bulan*60)+tanggal1
+    total_tanggal2 <= (tahun2*365)+(bulan*60)+tanggal2
+    selisih <= total_tanggal2 - total_tanggal1
+
+    tahun <= selisih div 365
+    sisa  <= selisih mod 365
+    bulan <= sisa div 30
+    tanggal <= sisa mod 30
+    output(tahun,bulan,tanggal)

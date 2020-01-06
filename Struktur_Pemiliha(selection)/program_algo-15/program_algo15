@@ -1,0 +1,32 @@
+menentukan_index_nilai
+{i.s: user memasukan nilai ujian}
+{f.s: menampilkan index nilai ujian}
+
+kamus
+nilai:integer
+index:char
+
+algoritma
+    input(nilai)
+    if(nilai>=80)and(nilai<=100)
+      then
+       index <= 'A'
+      else
+          if(nilai>=70)and(nilai<80)
+          then
+            index <= 'B'
+          else
+            if(nilai>=60)and(nilai<70)
+              then
+                index <= 'C'
+              else
+                if(nilai>=50)and(nilai<60)
+                  then
+                    index <= 'D'
+                  else
+                    index <= 'E'
+                endif
+            endif
+        endif
+    endif
+    output(index)

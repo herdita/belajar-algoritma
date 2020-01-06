@@ -1,0 +1,81 @@
+program pengurutan_rangking
+{i.s:}
+{f.s:}
+
+Kamus global
+    const 
+        maks_mhs= 20
+    type
+        data = record
+            nama : string
+            nilai: integer
+        endrecord
+    
+    arr_mhs = array[1..maks_mhs]of data
+
+    mahasiswa: arr_mhs
+    
+procedure isi_data(output n:integer, output mahasiswa:arr_mhs)
+{i.s: user memasukan banyak mahasiswa, nama, nilai }
+{f.s: }
+
+Kamus
+    i: integer
+
+algoritma
+    input(n) // banyaknya mahasiswa
+    output('------------------------')
+    output('|     Nama     | Nilai |')
+    output('------------------------')
+    for i <- 1 to n do
+        input(mahasiswa[i].nama)
+        input(mahasiswa[i].nilai)
+    endfor
+endprocedure
+
+
+procedure urut_data(input n:integer, output mahasiswa:arr_mhs)
+{i.s: data mahasiswa sudah terdefinisi dan akan di urutkan }
+{f.s: menampilkan data mahasiswa yang sudah di urutkan berdasarkan nilai}
+
+Kamus
+    i,j  :integer
+    min  :integer
+    temp :data
+
+algoritma
+    //memakai metode min sort acending
+    for i <- 1 to (n-1) do
+        min <- i
+        for j <- (i+1) to n do
+            if(mahasiswa[j].nilai < mahasiswa[min].nilai) then
+                min <- j
+        endfor
+        temp            <- mahasiswa[i]
+        mahasiswa[i]    <- mahasiswa[min]
+        mahasiswa[min]  <- temp
+    endfor
+endprocedure
+
+procedure tampil_data(input n:integer, input mahasiswa:arr_mhs)
+{i.s: data banyaknya mahasiswa dan nama, nilai sudah terdefinisi}
+{f.s: menampilkan nilai mahasiswa}
+
+Kamus
+    i:integer
+
+algoritma
+    output('------------------------')
+    output('|     Nama     | Nilai |')
+    output('------------------------')
+    procedure(n,mahasiswa) 
+    for i <- 1 to n do
+        output(mahasiswa[i].nama)
+        output(mahasiswa[i].nilai)
+    endfor
+endprocedure
+
+
+algoritma utama
+    isi_data(n,mahasiswa)
+    tampil_data(n,mahasiswa)

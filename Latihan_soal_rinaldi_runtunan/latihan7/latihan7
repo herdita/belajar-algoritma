@@ -1,0 +1,62 @@
+menampilkan_suku_n
+{i.s: user mendefinisikan suku ke n}
+{f.s: menampilkan hasil suku ke n}
+
+
+procedure isi_suku(output n:integer)
+{i.s: user mamasukan nilai n}
+{f.s: mengeluarkan nilai n}
+
+kamus
+
+algoritma
+    input(n)
+endprocedure
+
+
+function suku_n(input n:integer):integer
+{i.s: nilai n sudah terdefinisi }
+{f.s: menampilkan suku ke n}
+
+kamus
+
+algoritma
+    if(n=1)
+      then
+        suku_n <- 3
+      else
+        if(n=2)
+          then
+            suku_n <- 5
+          else
+            if(n mod 2=1)
+             then
+              suku_n <- suku_n(n-2)*suku_n(n-1)
+            else
+              suku_n <- suku_n(n-2)+suku_n(n-1)
+            endif
+        endif
+    endif
+endfunction
+
+
+procedure tampil_suku(input suku_n:integer)
+{i.s: user sudah mendefinisi suku ke n}
+{f.s: menampilkan deret suku ke n}
+
+kamus
+
+algoritma
+    output(suku_n(n))
+endprocedure
+
+
+kamus {kamus global}
+    n:integer
+    procedure isi_suku(input n:integer)
+    function suku_n(input n:integer)
+    procedure tampil_suku(input suku_n:integer)
+
+algoritma
+    isi_suku(n)
+    tampil_suku(suku_n)

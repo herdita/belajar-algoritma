@@ -1,0 +1,20 @@
+for i <- 1 to n-1 do
+    for k <- 1 to n-i do
+        if(data[k].nama < data[k+1].nama) then  //descending
+            temp        <- data[k]
+            data[k]     <- data[k+1]
+            data[k+1]   <- data[k]
+        endif
+    endif
+endif
+
+
+for i<- 1 to n-1 do
+    for k <- n downto i+1
+        if(data[k].nama < data[k].nama) then  // ascending
+            temp    <- data[k]
+            data[k] <- data[k+1]
+            data[k+1] <- temp
+        endif
+    endif
+endif

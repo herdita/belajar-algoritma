@@ -1,0 +1,15 @@
+nilai_maxsimum
+{i.s : user memasukan nilai a dan b}
+{f.s : menampilakna nilai maksimal dari a dan b}
+
+Kamus
+a,b,max:integer
+
+algoritma
+    input(a,b)
+    if(a>b)then
+      max <= a
+    else
+      max <= b
+    endif
+    output(max)

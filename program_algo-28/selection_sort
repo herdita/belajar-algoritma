@@ -1,0 +1,20 @@
+for i <- 1 to n-1 do
+    min <- i
+    for k <- i+1 to n do
+        if(data[k].nilai < data[min].nilai)then     //ascending 
+            min <- k
+        endif
+    endfor
+        temp        <- data[i]
+        data[i]     <- data[min]
+        data[min]   <- temp
+endfor
+
+for i <- n downto 2 do
+    max <- 1
+    for k <- 2 to i do
+        if(data[k] < dat[max])
+            max <- k
+        endif
+    endfor
+endfor
