@@ -1,0 +1,10 @@
+tentang
+-> daftar mahasiswa , daftar matakuliah
+-> dengan data array of record
+-> dengan data array dua dimensi (matrik)
+-> procedure isi data
+-> procedure daftar mahasiswa
+-> procedure daftar matkul
+-> procedure nilai mahasiswa ( matrik )
+-> function indeks
+-> procedure tampil data

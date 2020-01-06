@@ -1,0 +1,8 @@
+tentang
+-> pengurutan data buku berdasarkan kode buku
+-> dengan data array of record 
+-> function login ( dengan type data boolean )
+-> procedure menu_pilihan
+-> procedure Isi_data
+-> procedure Urut_data_buku
+-> procedure tampil_data_buku

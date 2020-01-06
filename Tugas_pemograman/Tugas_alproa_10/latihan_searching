@@ -1,0 +1,47 @@
+ latihan searching squensial tanpa sentinel
+
+procedure input(data_cari:string)
+
+i <- 1
+while(v_arr[i].nama <> data_cari)and(i < max_arr)do
+    i <- i+1
+endwhile
+if (v_arr[i].nama = data_cari) then
+    output('data di temukan')
+else
+    output('data tidak di temukan')
+endif
+
+
+searching squensial dengan sentinel
+
+i <- 1
+v_arr[max_arr + 1].nama <- data_cari
+while(v_arr[i].nama <> data_cari)do
+    i <- i+1
+endwhile
+if(i < max_arr + 1)then
+    output('data di temukan')
+else
+    output('data tidak di temukan')
+endif
+
+
+searcing squensial dengan boolean
+
+i <- 1
+ketemu <- false
+
+while(not ketemu)and(i <= max_arr)do
+    if(v_arr[i].nama = data_cari)then
+        ketemu <- true
+    else
+        i <- i+1
+    endif
+endwhile
+
+if(ketemu)then
+    output('data yang anda cari dimukan')
+else
+    output('data tidak di temukan')
+endif

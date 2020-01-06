@@ -1,0 +1,48 @@
+bubble sort
+
+
+    for i <- 1 to n-1 do
+        for k <- 1 to n-i do
+            if(v_arr[k].nama > v_arr[k+1].nama) then
+                temp        <- v_arr[k]
+                v_arr[k]    <- v_arr[k+1]
+                v_arr[k+1]  <- temp
+            endif
+        endfor
+    endfor
+
+    
+    procedure tukar(output a:integer, output b:integer)
+
+    kamus
+        temp <- integer;
+
+    algoritma
+        temp <- a
+        a    <- b
+        b    <- temp
+    endprocedure
+    
+    
+    for i <- 1 to n-1 do
+        for k <- n downto i+1 do
+            if(v_arr[k].nama < v_arr[k].nama) then
+                tukar(v_arr[k],v_arr[k+1])
+            endif
+        endfor
+    endfor
+
+ 
+    selection sort
+    
+    for i <- 1 to n-1 do
+        max <- i
+        for k <- i+1 to n do
+            if(v_arr[k].nama > v_arr[max].nama)
+                max <- k
+            endif
+        endfor
+        temp        <- v_arr[i]
+        v_arr[i]    <- v_arr[max]
+        v_arr[max]  <- v_arr[i]
+    endfor

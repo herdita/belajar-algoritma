@@ -1,0 +1,12 @@
+mencetak_1_sampai_n
+{i.s : user memasukan nilai n}
+{f.s : mencetak banyaknya n}
+
+kamus
+i:integer
+n:integer
+
+algoritma
+    input(n)
+    for i <- 1 to n do
+      output(i)

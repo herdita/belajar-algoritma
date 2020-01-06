@@ -1,0 +1,111 @@
+program data_buku
+{i.s:}
+{f.s:}
+
+{kamus}
+const
+    user    : 'herdita'
+    pass    : '10116136'
+    maks_data : 20
+type
+    data= record
+            kode        :string
+            nama        :string
+            tahun       :integer
+            pengarang   :string    
+        endrecord
+    arr_data= array[1..maks_data]of data
+
+buku=arr_data
+
+
+procedure isi_data(output n:integer, output buku:arr_data)
+{i.s:}
+{f.s:}
+
+{kamus}
+
+{algoritma}
+    input(n) {banyaknya data}
+    {validasi}
+    
+    while(n<0)or(n>maks_data)do
+        output('maaf data harus 1 sampai 20')
+    endwhile
+
+    output('| Kode |    Nama    | Tahun | pengarang |')
+    for i <- 1 to n do
+        output('|      |            |       |           |')
+        input(buku(i).kode)
+        input(buku(i).nama)
+        input(buku(i).tahun)
+        input(buku(i).pengarang)
+    endfor
+endprocedure
+
+
+procedure tampil_data()
+{i.s:}
+{f.s:}
+
+{kamis}
+
+{algoritma}
+
+
+endprocedure
+
+
+procedure menu_pilihan
+{i.s:}
+{f.s:}
+
+{kamus}
+    menu:integer
+    procedure isi_data(output n:integer, output buku:arr_data)
+    procedure tampil_data()
+
+{algoritma}
+    output('Menu Pilihan')
+    output('1. Isi data ')
+    output('2. tampil data ')
+    output('0. keluar ')
+    input(menu)
+
+    repeat
+        depend(menu)on
+            1 : isi_data
+            2 : tampil_data
+        enddepend
+    until menu = 0
+endprocedure
+
+
+procedure login
+{i.s:}
+{f.s:}
+
+{kamus}
+    procedure menu_pilihan
+    i: integer
+
+{algoritma}
+    repeat
+        input(pengguna)
+        input(sandi)
+        n <- 0
+        
+        if(pengguna=user) and (sandi=pass) then
+            output('Akses diterima, selamat datang di program kami')
+            menu_pilihan
+        endif
+
+        if(pengguna<>user) or (sandi<>pass) then
+            output('maaf data salah, kesempatan',3-n,'kali lagi')
+            n <- n + 1
+        endif 
+    until n > 3
+endprocedure
+
+{algoritma utama}
+    login

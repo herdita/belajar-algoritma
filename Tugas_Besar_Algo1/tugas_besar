@@ -1,0 +1,126 @@
+program peminjama_buku
+{i.s:}
+{f.s:}
+
+{kamus}
+    const
+        maks_data=50
+    type
+        agt=record
+            nama,alamat,id,pass: string;
+        endrecord
+        arr_anggota= array[1.maks_data]of agt
+
+    dt_anggota: arr_anggota
+
+
+procedure daftar_anggota(output id:string, output pass:string)
+{i.s:}
+{f.s:}
+
+kamus
+    nama,alamat:string
+
+algoritma
+    output('--------------')
+    output('Daftar Anggota')
+    output('--------------')
+    for i:= 1 to 2 do
+        input(dt_anggota(i).nama)
+        input(dt_anggota(i).alamat)
+        input(dt_anggota(i).id)
+        input(dt_anggota(i).pass)
+    endfor
+end;
+
+
+
+procedure anggota(input id:string, input pass:string)
+{i.s:}
+{f.s:}
+
+kamus
+    procedure daftar_anggota(output id:string, output pass:string)
+    sandi,pengguna : string
+    i: integer
+
+algoritma
+    i <- 1
+    repeat
+        input(pengguna)
+        input(sandi)
+        if(pengguana = id)and(sandi = pass) then
+            i <- 4
+        else
+            output('pengguna dan sandi salah')
+            output('Kesempatan',3-i,'kali lagi')
+            i <- 1+1
+        endif
+    until i = 4
+endprocedure
+
+
+procedure umum(ouput data_umum:data)
+{i.s:}
+{f.s:}
+
+kamus
+    type 
+        data=record
+            nama,kelamin,alamat: string
+        endrecord
+
+    data_umum: data
+
+
+algoritma
+    input(nama)
+    input(kelamin)
+    input(Alamat)
+end;
+
+
+procedure login(output menu:integer)
+{i.s:}
+{f.s:}
+
+kamus
+    prototype daftar_anggota(ouput id:string, output pass:string)
+    prototype anggota(input id:string, input pass:string)
+    prototype umum(output data_umum:data)
+
+algoritma
+    output('------------------')
+    output(' Login Pengunjung ')
+    output('------------------')
+    output('1. Daftar  ')
+    output('2. Anggota ')
+    output('3. Umum    ')
+    output('0. Keluar  ')
+    output('-----------')
+    input(menu)
+    {validasi}
+    while(menu < 0)or(menu > 3)do
+        output('Pilihan anda tidak ada di daftar')
+        input(menu)
+    endwhile
+endprocedure
+
+
+
+algoritma utama
+{i.s:}
+{f.s:}
+
+kamus
+
+
+algoritma
+    repeat
+        login(menu)
+        depend on(menu)
+            1 <- daftar_anggota(id,pass)
+            2 <- anggota(id,pass)
+            3 <- umum(data_umum)
+        enddepend
+    until(menu = 0)

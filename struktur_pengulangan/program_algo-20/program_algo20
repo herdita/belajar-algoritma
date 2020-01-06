@@ -1,0 +1,62 @@
+procedure versi_for
+{i.s: user memasukan nilai n}
+{f.s: mencetak hasil nilai n}
+
+kamus
+
+algoritma
+    input(n)
+    jumlah <- 0
+    for i <- 1 to n do
+      output(i)
+      jumlah <- jumlah + i
+    endfor
+    output(jumlah)
+endprocedure
+
+procedure versi_while
+{i.s: user memasukan nilai n}
+{f.s: mencetak hasil dari nilai n}
+
+kamus
+
+algoritma
+    input(n)
+    jumlah <- 0
+    i <- 1
+    while(i <= n)do
+      output(i)
+      jumlah <- jumlah + i
+      i <- i + 1
+    endwhile
+
+procedure versi_repeat
+{i.s: user memasukan nilai n}
+{f.s: mencetak hasil dari nilai n}
+
+kamus
+
+algoritma
+    input(n)
+    jumlah <- 0
+    i <- 1
+    repeat 
+      output(i)
+      jumlah <- jumlah + i
+      i <- i + 1
+    until(i > n)
+    output(jumlah)
+
+
+penjumlan deret
+{i.s: user sudah mendefinisi proses penjumlah deret }
+{f.s: menampilka penjulahan deret dari berbagai persi}
+
+kamus {kamus global}
+i,n,jumlah:integer
+
+
+algoritma
+ versi_for
+ versi_while
+ versi_repeat

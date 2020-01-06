@@ -1,0 +1,11 @@
+tentang
+-> data mahasiswa dengan array of record
+-> procedure isi data
+-> function indeks
+-> function rerata
+-> function nilai max
+-> function nilai min
+-> procedure jumlah_per_indeks
+-> procedure keterangan
+-> procedure jumlah lulus
+-> procedure tampil data
